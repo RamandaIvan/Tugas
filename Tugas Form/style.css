@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*menentukan bagaimana atribut tinggi dan lebar pada elemen dihitung*/
+} /*memberikan margin dengan nilai 0 dan padding dengan nilai 0 secara keseluruhan */
+
+body{
+  background-color: #000000; /* memberikan warna hitam pada background website */
+}
+
+.form{
+  display: flex; /*memmbuat container menjadi flexibel agar dapat diatur menggunakan properti lain */
+  justify-content: center; /*menempatkan konten pada rata tengah secara horizontal */
+  align-items: center; /*menempatkan konten pada rata tengah secara vertikal*/
+  min-height: 100ex; /*memberikan tinggi minimal dengan nilai 100ex*/
+}
+
+.box{
+  position: relative; /*membuat posisi konten menjadi relative yang mana akan menyesuaikan dengan isi*/
+  width: 380px; /*memberikan lebar dengan nilai 380pixel*/
+  height: 420px; /*memberikan tinggi dengan nilai 420pixel*/
+  background: #1c1c1c; /*memberikan warna sesuai dengan kode warna*/
+  border-radius: 15px; /*memperhalus ujung border agar tidak lancip*/
+}
+
+.box form{
+  position: absolute; /*membuat posisi konten menjadi tetap dan tidak dapat diganggu*/
+  inset: 4px;
+  background: #222; /*memberikan warna sesuai dengan kode warna*/
+  padding: 50px 40px; /*memberikan jarak antara konten dengan garis tepi konten dengan nilai samping 50pixel dan atas bawah 40pixel*/
+  border-radius: 15px; /*memperhalus ujung border agar tidak lancip*/
+  display: flex; /*memmbuat container menjadi flexibel agar dapat diatur menggunakan properti lain */
+  flex-direction: column; /*mengurutkan konten membentuk sebuah kolom*/
+}
+
+.box form h2{
+  color: #fff; /*memberikan warna sesuai dengan kode warna*/
+  font-weight: 500; /*memberikan ketebalan pada font*/
+  text-align: center; /*membuat text menjadi rata tengah*/
+  letter-spacing: 0.1em; /*memberikan jarak antar huruf*/
+}
+
+.box form .input {
+  position: relative; /*membuat posisi konten menjadi relative yang mana akan menyesuaikan dengan isi*/
+  width: 300px; /*memberikan lebar dengan nilai 300pixel*/
+  margin-top: 35px; /*memberikan margin pada bagian atas dengan nilai 35pixel*/
+}
+
+.box form .input input {
+  position: relative; /*membuat posisi konten menjadi relative yang mana akan menyesuaikan dengan isi*/
+  width: 100%; /*memberikan lebar dengan nilai maksimal*/
+  padding: 30px 10px 6px 5px; /*memberikan padding dengan bagian samping 20pixel dan atas bawah 10pixel*/
+  background: transparent; /*membuat background menjadi transparan*/
+  outline: none; /*menghilangkan garis tepi*/
+  color: #23242a; /*memberikan warna sesuai dengan kode warna*/
+  font-size: 1em; /*memberikan ukuran kepada huruf dengan nilai tertentu*/
+  letter-spacing: 0.05em; /*memberikan jarak antar huruf*/
+  transition: 0.5s; /*waktu transisi/kecepatan transisi*/
+  z-index: 1; /*Mengontrol visibilitas elemen*/
+  border: none; /*menghilangkan border*/
+}
+
+.box form .input span {
+  position: absolute; /*membuat posisi konten menjadi tetap dan tidak dapat diganggu*/
+  left: 0; /*jarak antara konten dengan bagian kiri*/
+  padding: 20px 0px 10px;/*memberikan padding*/
+  color: #8f8f8f; /*memberikan warna sesuai dengan kode warna*/
+  font-size: 1em; /*memberikan ukuran kepada huruf dengan nilai tertentu*/
+  letter-spacing: 0.05em; /*memberikan jarak antar huruf*/
+  transition: 0.5s; /*waktu transisi/kecepatan transisi*/
+}
+
+.box form .input input:valid~span,
+.box form .input input:focus~span {
+  color: #fff; /*memberikan warna sesuai dengan kode warna*/
+  font-size: 0.75em; /*memberikan ukuran kepada huruf dengan nilai tertentu*/
+  transform: translateY(-10px); /*sebuah atribut yyang dapat memberikan kesan animasi(namun terdapat pula atribut 'animasi' sendiri)*/
+}/*pada code ini, akan memberikan efek geser pada kata 'Username' dan 'Password'*/
+
+.box form .input i {
+  position: absolute; /*membuat posisi konten menjadi tetap dan tidak dapat diganggu*/
+  left: 0; /*jarak antara konten dengan bagian kiri*/
+  bottom: 0; /*jarak antara konten dengan bagian bawah*/
+  width: 100%; /*memberikan lebar dengan nilai maksimal*/
+  height: 2%; /*memberikan tinggi dengan nilai 2pixel*/
+  background: #fff; /*memberikan warna sesuai dengan kode warna*/
+  border-radius: 4px; /*memperhalus ujung border agar tidak lancip*/
+  overflow: hidden; 
+  transition: 0.5s; /*waktu transisi/kecepatan transisi*/
+}
+
+.box form .input input:valid~i,
+.box form .input input:focus~i {
+  height: 30px; /*membuat sebuah perubahan yang terjadi apabila .box form .input input menjadi lebih tinggi dengan tambahan dekorasi seperti yang sudah diatur pada .box form .input input:valid~span,
+    .box form .input input:focus~span {color: #fff; , font-size: 0.75em; , transform: translateY(-34px); }*/
+}
+
+.box form input[type="submit"] {
+  padding: 9px 25px; /*memberikan padding dengan nilai tertentu*/
+  border: none; /*menghilangkan border*/
+  outline: none; /*menghilangkan garis tepi*/
+  background: #fff; /*memberikan warna sesuai dengan kode warna*/
+  cursor: pointer; /*akan mengubah cursor menjadi pointer daat berada diatas konten*/
+  font-size: 0.9em;/*memberikan ukuran kepada huruf dengan nilai tertentu*/
+  border-radius: 4px; /*memperhalus ujung border agar tidak lancip*/
+  font-weight: 600; /*memberikan ketebalan pada font*/
+  width: 100px; /*memberikan lebar dengan nilai tertentu*/
+  margin-top: 10px; /*memberikan margin pada bagian atas dengan nilai tertentu*/
+}
+
+.box form input[type="submit"]:active {
+  opacity: 0.8; /*menggambarkan ke transparanan sebuah konten*/
+}
